@@ -126,6 +126,24 @@ Useful for
             then:
               - deep_sleep.prevent: deep_sleep_1
 
+.. _deep_sleep-sleep_after:
+
+``deep_sleep.sleep_after`` Action
+---------------------------
+
+This action sets the run_duration timer of the given deep sleep component, to make it go to sleep after a delay. If the timer is already active then it is reset, so this action can be used to keep the device awake for longer
+
+.. code-block:: yaml
+
+    on_...:
+      then:
+        - deep_sleep.sleep_after: 5min
+
+Configuration variables:
+
+- **id** (**Required**, :ref:`config-id`): The ID of the deep sleep component.
+- **delay** (**Required**, :ref:`config-time`): The duration of the delay before entering deep sleep.
+
 See Also
 --------
 
